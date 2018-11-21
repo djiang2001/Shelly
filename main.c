@@ -18,13 +18,11 @@ int main(int argc, char * argv[]){
   char ** args = parse_args( argc, *argv );
   int f = fork();
   int status;
-  printf("Dsdgsdgsdg");
   int cpid = wait(&status);
   if (!f){
-    printf("Child");
     exit(execvp(args[0], args));
   }
   if(WIFEXITED(status))
-    printf("%d",WEXITSTATUS(status));
+    //printf("%d \n",WEXITSTATUS(status));
   return 0;
 }
