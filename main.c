@@ -15,14 +15,26 @@ char ** parse_args(int nargs,char * line ) {
 }
 
 int main(int argc, char * argv[]){
+  int status,f,cpid;
   char ** args = parse_args( argc, *argv );
-  int f = fork();
-  int status;
-  int cpid = wait(&status);
+  
+  f = fork();
+  
   if (!f){
-    exit(execvp(args[0], args));
+    printf("Child executing\n");
+    execvp(args[1], argv);
+    printf("Error executing\n");
+  }else if(f > 0){
+
+    if((cpid = wait(&status)) < 0){
+      printf("Waiting");
+      exit(1);
+    }
+
+    printf("Parent: Complete\n");
+  }else{
+    printf("Fork failed\n");
+    exit(1);
   }
-  if(WIFEXITED(status))
-    //printf("%d \n",WEXITSTATUS(status));
   return 0;
 }
