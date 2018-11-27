@@ -7,7 +7,7 @@
 char ** parse_args(int nargs,char * line ) {
   char ** a = malloc(nargs * sizeof(char *));
   int i = 0;
-  while(i < nargs) {
+  while(line) {
     a[i] = strsep(&line, " ");
     i++;
   }
@@ -16,7 +16,7 @@ char ** parse_args(int nargs,char * line ) {
 
 int main(int argc, char * argv[]){
   int status,f,cpid;
-  char ** args = parse_args( argc, *argv );
+  char ** args = parse_args(argc, *argv );
   
   f = fork();
   
@@ -36,5 +36,7 @@ int main(int argc, char * argv[]){
     printf("Fork failed\n");
     exit(1);
   }
-  return 0;
+  printf("%s \n",args[2]);
+    return 0;
+
 }
