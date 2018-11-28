@@ -14,15 +14,22 @@ char ** parse_args(int nargs,char * line ) {
   return a;
 }
 
-int main(int argc, char * argv[]){
-  int status,f,cpid;
-  char ** args = parse_args(argc, *argv );
+int main(){
+  int status, f, cpid, nargs;
+  char *s;
+  fgets(s, 100, stdin);
+  for(int i = 0; s[i]; i++){
+    if(!(strcmp(s[i], " ")))
+      nargs++;
+  }
+  
+  char ** args = parse_args(nargs, s);
   
   f = fork();
   
   if (!f){
     printf("Child executing\n");
-    execvp(args[1], argv);
+    execvp(args[1], args);
     printf("Error executing\n");
   }else if(f > 0){
 
