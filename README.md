@@ -1,5 +1,5 @@
 # Shelly
-The shell made by Dahong Jiang and Stefan Tan. 
+by Dahong Jiang and Stefan Tan 
 
 ## Features of Shelly
 
