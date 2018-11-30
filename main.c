@@ -50,7 +50,7 @@ int main(){
 
     char* tok = strtok(line, " ");
     
-    while(tok){
+    while(tok){ //if(tok == ";")
       args[argcount] = tok;
       argcount++;
       tok = strtok(NULL," ");
