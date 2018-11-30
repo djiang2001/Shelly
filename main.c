@@ -10,7 +10,7 @@ void printCurDir() {
     printf("\ncwd: %s$ ", cwd); 
 } 
 
-char ** parse_args( char * line ) {
+/*char ** parse_args( char * line ) {
   char ** a = malloc(100 * sizeof(char *));
   int i = 0;
   while(line) {
@@ -20,6 +20,7 @@ char ** parse_args( char * line ) {
   return a;
 }
 
+*/
 void exec(char ** args){
   int f, status;
 
@@ -35,22 +36,30 @@ void exec(char ** args){
   }
   else {
     wait(&status);
-    return;
   }
 } 
   
 
 int main(){
-  int status, f;
-  
-  while(1){
-    // printCurDir();
-    char *s = malloc(100 * sizeof(char));
-    scanf("%[^\n]s", s);
+  char line[50];
+  printCurDir();
+  while(fgets(line,50, stdin)){
+    line[strlen(line)-1] = '\0';
+    char *args[50];
+    int argcount = 0;
+
+    char* tok = strtok(line, " ");
     
-    char ** args = parse_args(s);
-    exec(args);
+    while(tok){
+      args[argcount] = tok;
+      argcount++;
+      tok = strtok(NULL," ");
+    }
+    args[argcount] = NULL;
+    if(argcount > 0){
+      exec(args);
+    }
+    printCurDir();
   }
   return 0;
-
 }
