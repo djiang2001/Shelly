@@ -48,9 +48,10 @@ int main(){
     char *args[50];
     int argcount = 0;
 
-    char* tok = strtok(line, " ");
     
-    while(tok){ //if(tok == ";")
+    char* tok = strtok(line, " ;<>|");
+    
+    while(tok){
       args[argcount] = tok;
       argcount++;
       tok = strtok(NULL," ");
@@ -61,5 +62,7 @@ int main(){
     }
     printCurDir();
   }
+
+  
   return 0;
 }
