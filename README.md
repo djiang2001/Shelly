@@ -2,7 +2,7 @@
 by Dahong Jiang and Stefan Tan 
 
 ## Features:
-* Forks and executes commands!
+* Forks and executes commands including cd and exit!
 * Parses multiple commands on one line!
 * Redirects using >, <!
 * Implements simple pipes!
