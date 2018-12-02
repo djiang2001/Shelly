@@ -4,6 +4,7 @@
 #include <sys/wait.h>
 #include <string.h>
 #include <fcntl.h>
+#include <signal.h>
 
 #include "main.h"
 
@@ -12,6 +13,14 @@ void printCurDir() {
   getcwd(cwd, sizeof(cwd)); 
   printf("\ncwd: %s$ ", cwd); 
 }
+
+/*
+static void sighandler( int signo ) {
+  if (signo == SIGINT) {
+    printCurDir();
+  }
+}
+*/
 
 void redirectOut(char ** args, int nargs){
   int f, status;
@@ -92,6 +101,7 @@ void exec(char ** args){
 } 
 
 int main(){
+  //signal(SIGINT, sighandler);
   char line[50];
   printCurDir();
   while(fgets(line,50, stdin)){
