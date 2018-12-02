@@ -9,6 +9,7 @@ by Dahong Jiang and Stefan Tan
 ## Attempted:
 The following did not end up working, but have been left in the code, commented out.
 * Tried to catch signals such as SIGINT.
+* Tried to handle multiple redirects.
 ## Bugs:
 
 ## Files & Function Headers:
