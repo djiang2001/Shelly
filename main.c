@@ -4,6 +4,8 @@
 #include <sys/wait.h>
 #include <string.h>
 
+#include "main.h"
+
 void printCurDir() { 
   char cwd[256]; 
   getcwd(cwd, sizeof(cwd)); 
@@ -46,6 +48,7 @@ int main(){
   while(fgets(line,50, stdin)){
     line[strlen(line)-1] = '\0';
     char *args[50];
+    
     char * token;
     int numcmd = 1;
     char ** cmds = malloc(100 * sizeof(char *));
