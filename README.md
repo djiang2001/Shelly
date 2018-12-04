@@ -13,16 +13,16 @@ The following did not end up working, but have been left in the code, commented 
 ## Bugs:
 
 ## Files & Function Headers:
-*void printCurDir();
+* void printCurDir();
      Prints out the command line prompt for our shell
      Inputs:None
      Finds the current directory and prints it as the
      command prompt
 
-*static void sighandler( int signo );
+* static void sighandler( int signo );
      Attempted this but was not successful
 
-*void redirectOut(char ** args, int nargs);
+* void redirectOut(char ** args, int nargs);
      Redirects a function output to another file
      Input: The string array that contains the arguments
      	    and the number of arguments
@@ -30,7 +30,7 @@ The following did not end up working, but have been left in the code, commented 
      Forks a new child process and opens a new file with
      read or create status and dup2() it before executing
 
-*void redirectIn(char ** args, int nargs);
+* void redirectIn(char ** args, int nargs);
      Redirects a function output into another file
      Input: The string array that contains the arguments
      	    and the number of arguments
@@ -40,7 +40,7 @@ The following did not end up working, but have been left in the code, commented 
      before reading the file output into the arguments
      for execution
      
-*void redirectOutApp(char ** args, int nargs);
+* void redirectOutApp(char ** args, int nargs);
      Redirects a function output to another file
      Input: The string array that contains the arguments
      	    and the number of arguments
@@ -49,14 +49,14 @@ The following did not end up working, but have been left in the code, commented 
      read,create, or append status and dup2() it before
      executing
 
-*int piper(char ** args);
+* int piper(char ** args);
     Pipes a command output to another command
     Input: Array of arguments
     Output: Returns 0 if successful
     Takes in an argument from one pipe and reads
     it into another file storing it
 
-*void exec(char ** args);
+* void exec(char ** args);
     Creates a child process to execute a command
     Input: Number of arguments and argument array
     Output: None
