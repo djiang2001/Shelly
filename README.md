@@ -14,15 +14,18 @@ The following did not end up working, but have been left in the code, commented 
 
 ## Files & Function Headers:
 * void printCurDir();
+
      Prints out the command line prompt for our shell
      Inputs:None
      Finds the current directory and prints it as the
      command prompt
 
 * static void sighandler( int signo );
+
      Attempted this but was not successful
 
 * void redirectOut(char ** args, int nargs);
+
      Redirects a function output to another file
      Input: The string array that contains the arguments
      	    and the number of arguments
@@ -31,6 +34,7 @@ The following did not end up working, but have been left in the code, commented 
      read or create status and dup2() it before executing
 
 * void redirectIn(char ** args, int nargs);
+
      Redirects a function output into another file
      Input: The string array that contains the arguments
      	    and the number of arguments
@@ -41,6 +45,7 @@ The following did not end up working, but have been left in the code, commented 
      for execution
      
 * void redirectOutApp(char ** args, int nargs);
+
      Redirects a function output to another file
      Input: The string array that contains the arguments
      	    and the number of arguments
@@ -50,6 +55,7 @@ The following did not end up working, but have been left in the code, commented 
      executing
 
 * int piper(char ** args);
+
     Pipes a command output to another command
     Input: Array of arguments
     Output: Returns 0 if successful
@@ -57,6 +63,7 @@ The following did not end up working, but have been left in the code, commented 
     it into another file storing it
 
 * void exec(char ** args);
+
     Creates a child process to execute a command
     Input: Number of arguments and argument array
     Output: None
